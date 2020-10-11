@@ -1,1 +1,6 @@
-apt-get update && wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh && chmod +x shadowsocksR.sh && sudo ./shadowsocksR.sh
+# Update
+apt-get update
+
+wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh
+chmod +x shadowsocksR.sh
+sudo ./shadowsocksR.sh
