@@ -2,7 +2,13 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
-
+#ECHO COLORS
+reds="`tput setaf 1`"
+greens="`tput setaf 2`"
+cyan="`tput setaf 6`"
+bold="`tput bold`"
+norm="`tput sgr0`"
+magen="`tput setaf 5`"
 clear
 echo
 echo "        ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
@@ -300,7 +306,7 @@ pre_install(){
     done
 
     echo
-    echo "Press any key to start...or Press Ctrl+C to cancel"
+    echo "Press ${greens}Enter Key${norm} to Start Or Press ${reds}CTRL + C${norm} to stop"
     char=`get_char`
     # Install necessary dependencies
     if check_sys packageManager yum; then
