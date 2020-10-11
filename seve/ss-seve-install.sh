@@ -1,3 +1,8 @@
+# 1st
+# 2nd
+# 3rd
+# 4th
+# Sanaol Marunong :<
 #!/usr/bin/env bash
 #ECHO COLORS
 reds="`tput setaf 1`"
