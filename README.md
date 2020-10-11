@@ -3,9 +3,9 @@
 Created by SEVE MALACHI
 Install the Shadowsocks
 <pre>
-wget --no-check-certificate https://raw.githubusercontent.com/mathew1357/Deb9-SS-Script/master/seve/ss-seve-install.sh
-chmod +x ss-seve-install.sh
-sudo ./ss-seve-install.sh
+wget --no-check-certificate https://raw.githubusercontent.com/mathew1357/Deb9-SS-Script/master/heloo.sh
+chmod +x heloo.sh
+sudo ./heloo.sh
 </pre>
 Change Password of a tunnel
 <pre>
