@@ -284,7 +284,7 @@ read -p "Default password: sevescripts:" shadowsockspwd
     echo -e "Please select obfs for ShadowsocksR:"
     for ((i=1;i<=${#obfs[@]};i++ )); do
         hint="${obfs[$i-1]}"
-        echo -e "${green}${i}${plain}) ${hint}"
+        echo -e "${green}${i}${plain} ${hint}"
     done
     read -p "Which obfs you'd select(Default: ${obfs[0]}):" r_obfs
     [ -z "$r_obfs" ] && r_obfs=1
