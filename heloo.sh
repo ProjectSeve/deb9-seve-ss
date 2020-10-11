@@ -16,9 +16,6 @@ echo "        ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒
 echo "                 ░▒█▀▀▀█░░▒█▀▀▀█░"
 echo "                 ░░▀▀▀▄▄░░░▀▀▀▄▄░"
 echo "                 ░▒█▄▄▄█░░▒█▄▄▄█░
-echo ""
-echo ""
-read -n 1 -s -r -p "Press ${greens}Enter Key${norm} to continue to Install Or Press ${reds}CTRL + C${norm} to stop"
 
 libsodium_file="libsodium-1.0.18"
 libsodium_url="https://github.com/jedisct1/libsodium/releases/download/1.0.18-RELEASE/libsodium-1.0.18.tar.gz"
