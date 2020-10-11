@@ -21,8 +21,6 @@ echo "        ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒
 echo "                 ░▒█▀▀▀█░░▒█▀▀▀█░"
 echo "                 ░░▀▀▀▄▄░░░▀▀▀▄▄░"
 echo "                 ░▒█▄▄▄█░░▒█▄▄▄█░
-echo ""
-echo ""
 read -n 1 -s -r -p "Press ${greens}Enter Key${norm} to continue to Install Or Press ${reds}CTRL + C${norm} to stop"
 
 libsodium_file="libsodium-1.0.18"
@@ -199,7 +197,7 @@ pre_install(){
     fi
     # Set ShadowsocksR config password
     echo "Please enter password for ShadowsocksR:"
-    read -p "(Default password: sevescripts):" shadowsockspwd
+    read -p "Default password: sevescripts:" shadowsockspwd
     [ -z "${shadowsockspwd}" ] && shadowsockspwd="sevescripts"
     echo
     echo "---------------------------"
