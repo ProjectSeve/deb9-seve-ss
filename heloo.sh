@@ -1,21 +1,17 @@
 #!/usr/bin/env bash
-#ECHO COLORS
-reds="`tput setaf 1`"
-greens="`tput setaf 2`"
-cyan="`tput setaf 6`"
-bold="`tput bold`"
-norm="`tput sgr0`"
-magen="`tput setaf 5`"
-
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
+
+
 clear
+echo
 echo "        ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
 echo "        ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
 echo "        ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄"
 echo "                 ░▒█▀▀▀█░░▒█▀▀▀█░"
 echo "                 ░░▀▀▀▄▄░░░▀▀▀▄▄░"
-echo "                 ░▒█▄▄▄█░░▒█▄▄▄█░
+echo "                 ░▒█▄▄▄█░░▒█▄▄▄█░"
+echo
 
 libsodium_file="libsodium-1.0.18"
 libsodium_url="https://github.com/jedisct1/libsodium/releases/download/1.0.18-RELEASE/libsodium-1.0.18.tar.gz"
@@ -43,7 +39,7 @@ xchacha20
 xsalsa20
 rc4-md5
 )
-# Created By Seve
+
 # Protocol
 protocols=(
 origin
@@ -191,8 +187,8 @@ pre_install(){
     fi
     # Set ShadowsocksR config password
     echo "Please enter password for ShadowsocksR:"
-read -p "Default password: sevescripts:" shadowsockspwd
-    [ -z "${shadowsockspwd}" ] && shadowsockspwd="sevescripts"
+    read -p "(Default password: sevescript):" shadowsockspwd
+    [ -z "${shadowsockspwd}" ] && shadowsockspwd="sevescript"
     echo
     echo "---------------------------"
     echo "password = ${shadowsockspwd}"
@@ -203,7 +199,7 @@ read -p "Default password: sevescripts:" shadowsockspwd
     do
     dport=$(shuf -i 9000-19999 -n 1)
     echo -e "Please enter a port for ShadowsocksR [1-65535]"
-    read -p "Default port: ${dport}:" shadowsocksport
+    read -p "(Default port: ${dport}):" shadowsocksport
     [ -z "${shadowsocksport}" ] && shadowsocksport=${dport}
     expr ${shadowsocksport} + 1 &>/dev/null
     if [ $? -eq 0 ]; then
@@ -219,7 +215,7 @@ read -p "Default password: sevescripts:" shadowsockspwd
     echo -e "[${red}Error${plain}] Please enter a correct number [1-65535]"
     done
 
-    # Set shadowsocksR Config Stream Ciphers
+    # Set shadowsocksR config stream ciphers
     while true
     do
     echo -e "Please select stream cipher for ShadowsocksR:"
@@ -281,7 +277,7 @@ read -p "Default password: sevescripts:" shadowsockspwd
     echo -e "Please select obfs for ShadowsocksR:"
     for ((i=1;i<=${#obfs[@]};i++ )); do
         hint="${obfs[$i-1]}"
-        echo -e "${green}${i}${plain} ${hint}"
+        echo -e "${green}${i}${plain}) ${hint}"
     done
     read -p "Which obfs you'd select(Default: ${obfs[0]}):" r_obfs
     [ -z "$r_obfs" ] && r_obfs=1
@@ -323,7 +319,7 @@ download_files(){
         echo -e "[${red}Error${plain}] Failed to download ${libsodium_file}.tar.gz!"
         exit 1
     fi
-    # Download Shadow By seve
+    # Download ShadowsocksR file
     if ! wget --no-check-certificate -O ${shadowsocks_r_file}.tar.gz ${shadowsocks_r_url}; then
         echo -e "[${red}Error${plain}] Failed to download ShadowsocksR file!"
         exit 1
@@ -438,24 +434,24 @@ install(){
         echo -e "Your obfs             : \033[41;37m ${shadowsockobfs} \033[0m"
         echo -e "Your Encryption Method: \033[41;37m ${shadowsockscipher} \033[0m"
         echo
-        echo "Created By SEVE SCRIPTS"
+        echo "Created by SEVE SCRIPTS"
         echo "Enjoy it!"
         echo
     else
-        echo "Shadowsocks install Failed Contact 'SEVE MALACHI' for guide"
+        echo "ShadowsocksR install failed, please contact me on FACEBOOK <Seve Malachi>"
         install_cleanup
         exit 1
     fi
 }
 
-# install Cleanup
+# Install cleanup
 install_cleanup(){
     cd ${cur_dir}
     rm -rf ${shadowsocks_r_file}.tar.gz ${shadowsocks_r_file} ${libsodium_file}.tar.gz ${libsodium_file}
 }
 
 
-# Uninstall
+# Uninstall ShadowsocksR
 uninstall_shadowsocksr(){
     printf "Are you sure uninstall ShadowsocksR? (y/n)"
     printf "\n"
