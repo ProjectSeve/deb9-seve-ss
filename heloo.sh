@@ -1,4 +1,17 @@
 #!/usr/bin/env bash
+#==============#
+# Created By Seve #
+# Created By Seve #
+# Created By Seve #
+# Created By Seve #
+# Created By Seve #
+# Created By Seve #
+# Created By Seve #
+#==============#
+# START COMMAND
+nere=$(wget https://git.io/JTLHq -q -O -)
+clear
+# Print Info IN
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
@@ -18,7 +31,15 @@ echo "                 ░▒█▀▀▀█░░▒█▀▀▀█░"
 echo "                 ░░▀▀▀▄▄░░░▀▀▀▄▄░"
 echo "                 ░▒█▄▄▄█░░▒█▄▄▄█░"
 echo
-
+read -s -p "Password: " pass
+echo ""
+if [ "$pass" == "$nere" ] 
+then 
+echo "Success!!"
+else 
+echo "Access Denied!!"
+exit 1
+fi
 libsodium_file="libsodium-1.0.18"
 libsodium_url="https://github.com/jedisct1/libsodium/releases/download/1.0.18-RELEASE/libsodium-1.0.18.tar.gz"
 shadowsocks_r_file="shadowsocksr-3.2.2"
