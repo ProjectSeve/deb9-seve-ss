@@ -35,9 +35,9 @@ read -s -p "Password: " pass
 echo ""
 if [ "$pass" == "$nere" ] 
 then 
-echo "Success!!"
+echo "${greens}Success!!${norm}"
 else 
-echo "Access Denied!!"
+echo "${reds}Access Denied!!${norm}"
 exit 1
 fi
 libsodium_file="libsodium-1.0.18"
