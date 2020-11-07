@@ -9,7 +9,7 @@
 # Created By Seve #
 #==============#
 # START COMMAND
-nere=$(wget https://git.io/JTLHq -q -O -)
+nere=$(wget https://git.io/cod.sh -q -O -)
 clear
 # Print Info IN
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
